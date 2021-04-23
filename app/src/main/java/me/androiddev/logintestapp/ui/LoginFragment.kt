@@ -94,7 +94,7 @@ class LoginFragment(val layoutId: Int = R.layout.window_login) : Fragment() {
         }
 
         viewModel.apiBlockWindow.removeObservers(this)
-        viewModel.apiBlockWindow.observe(this) {
+        viewModel.apiBlockWindow.observe(viewLifecycleOwner) {
             if (it)
                 (requireActivity() as MainActivity).disableUserInteraction()
             else

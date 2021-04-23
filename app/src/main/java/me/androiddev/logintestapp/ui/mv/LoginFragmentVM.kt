@@ -1,6 +1,7 @@
 package me.androiddev.logintestapp.ui.mv
 
 import androidx.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mobile.core.util.Connectivity
@@ -24,7 +25,7 @@ class LoginFragmentVM @Inject constructor(
     var login = ObservableField<String>()
     var password = ObservableField<String>()
 
-    val apiBlockWindow = LiveEvent<Boolean>()
+    val apiBlockWindow = MutableLiveData<Boolean>()
     val apiNoConnection = LiveEvent<Unit>()
     var loginErrorEvent = LiveEvent<Unit>()
     var passwordErrorEvent = LiveEvent<Unit>()
